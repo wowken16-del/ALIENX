@@ -1,776 +1,875 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Groep Cyprus — Websites voor Bedrijven & Restaurants</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>y2bq — Content Creator & Video Editor</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --ink: #1a1a1a;
-    --muted: #6b6b6b;
-    --line: #d0cfc8;
-    --bg: #f7f6f2;
-    --white: #ffffff;
-    --accent: #1a1a1a;
+    --blue: #3b82f6;
+    --blue-dark: #1d4ed8;
+    --blue-glow: rgba(59,130,246,0.35);
+    --dark: #060b18;
+    --dark2: #0c1425;
+    --dark3: #111c33;
+    --border: rgba(59,130,246,0.18);
+    --text: #e2e8f0;
+    --muted: #7e9ab5;
   }
-
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-
   body {
+    background: var(--dark);
+    color: var(--text);
     font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--ink);
     overflow-x: hidden;
+  }
+  /* STARS BG */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 20% 85%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 80% 15%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 45% 50%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 35%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 15% 70%, rgba(255,255,255,0.2) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
   }
 
   /* NAV */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.4rem 3rem;
-    background: rgba(247,246,242,0.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 0.5px solid var(--line);
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 68px;
+    background: rgba(6,11,24,0.75);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
   }
-  .logo {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 1.3rem;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    text-decoration: none;
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+    color: #fff;
   }
-  .logo span { font-style: italic; }
-  nav ul { list-style: none; display: flex; gap: 2.5rem; }
-  nav ul a {
-    font-size: 0.85rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+  .nav-logo span { color: var(--blue); }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
     color: var(--muted);
     text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
     transition: color 0.2s;
   }
-  nav ul a:hover { color: var(--ink); }
+  .nav-links a:hover { color: #fff; }
   .nav-cta {
-    font-size: 0.8rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ink);
-    text-decoration: none;
-    border: 0.5px solid var(--ink);
-    padding: 0.55rem 1.4rem;
-    border-radius: 99px;
-    transition: background 0.2s, color 0.2s;
+    background: var(--blue);
+    color: #fff !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
   }
-  .nav-cta:hover { background: var(--ink); color: var(--white); }
+  .nav-cta:hover { background: var(--blue-dark) !important; color: #fff !important; }
 
   /* HERO */
   .hero {
     position: relative;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    z-index: 1;
     overflow: hidden;
-    background: var(--white);
   }
-  .hero-svg {
+  .hero-glow {
     position: absolute;
-    inset: 0;
-    width: 100%; height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: 700px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(59,130,246,0.15) 0%, transparent 70%);
     pointer-events: none;
   }
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 0 3rem;
-    max-width: 820px;
-  }
-  .hero-eyebrow {
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(59,130,246,0.12);
+    border: 1px solid rgba(59,130,246,0.3);
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    font-size: 0.82rem;
+    color: #93c5fd;
     margin-bottom: 1.5rem;
+    font-weight: 500;
   }
+  .badge::before { content: '★'; font-size: 0.75rem; }
   .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3.2rem, 7vw, 6.5rem);
-    font-weight: 900;
-    line-height: 1.0;
-    letter-spacing: -0.03em;
-    color: var(--ink);
-    margin-bottom: 1.8rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    line-height: 1.07;
+    letter-spacing: -1.5px;
+    color: #fff;
+    max-width: 820px;
+    margin-bottom: 0.5rem;
   }
-  .hero h1 em {
-    font-style: italic;
-    font-weight: 400;
-  }
-  .hero-sub {
+  .hero h1 .accent { color: var(--blue); }
+  .hero p {
+    color: var(--muted);
     font-size: 1.1rem;
-    font-weight: 300;
-    color: var(--muted);
-    max-width: 440px;
+    max-width: 560px;
     line-height: 1.7;
-    margin-bottom: 2.5rem;
+    margin: 1.2rem auto 2.2rem;
   }
-  .btn-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: var(--ink);
-    color: var(--white);
-    text-decoration: none;
-    font-size: 0.88rem;
-    letter-spacing: 0.04em;
-    padding: 1rem 2rem;
-    border-radius: 99px;
-    transition: transform 0.2s, opacity 0.2s;
-  }
-  .btn-pill:hover { transform: translateX(4px); opacity: 0.85; }
-  .btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: transparent;
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 0.88rem;
-    letter-spacing: 0.04em;
-    padding: 1rem 2rem;
-    border-radius: 99px;
-    border: 0.5px solid var(--ink);
-    transition: background 0.2s, color 0.2s;
-    margin-left: 0.8rem;
-  }
-  .btn-ghost:hover { background: var(--ink); color: var(--white); }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: 2.5rem; left: 3rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
+  .hero-btns {
     display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    padding: 0.75rem 1.8rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
   }
-  .hero-scroll::before {
-    content: '';
-    display: block;
-    width: 32px; height: 0.5px;
-    background: var(--muted);
+  .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+  .btn-secondary {
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    padding: 0.75rem 1.8rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.12);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
   }
+  .btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+  .scroll-hint {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+  .scroll-arrow { font-size: 1.2rem; }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
 
-  /* STATS BAND */
-  .stats {
-    background: var(--ink);
-    color: var(--white);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 0.5px solid #333;
+  /* STATS BAR */
+  .stats-bar {
+    position: relative;
+    z-index: 1;
+    background: var(--dark2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
   }
   .stat-item {
-    padding: 2.8rem 3rem;
-    border-right: 0.5px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.6rem 3rem;
+    border-right: 1px solid var(--border);
+    min-width: 160px;
   }
   .stat-item:last-child { border-right: none; }
   .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    margin-bottom: 0.3rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.9rem;
+    color: #fff;
+    letter-spacing: -0.5px;
   }
-  .stat-label {
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #888;
-  }
+  .stat-num span { color: var(--blue); }
+  .stat-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
 
-  /* SERVICES */
-  .section {
-    padding: 7rem 3rem;
+  /* SECTIONS */
+  section {
+    position: relative;
+    z-index: 1;
+    padding: 5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
   }
   .section-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
+    font-size: 0.78rem;
+    font-weight: 600;
     text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 3rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    letter-spacing: 0.12em;
+    color: var(--blue);
+    margin-bottom: 0.75rem;
   }
-  .section-label::before {
-    content: '';
-    width: 24px; height: 0.5px;
-    background: var(--muted);
-    flex-shrink: 0;
-  }
-  .section-heading {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 700;
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: #fff;
+    letter-spacing: -0.8px;
     line-height: 1.15;
-    letter-spacing: -0.02em;
-    max-width: 600px;
-    margin-bottom: 4rem;
+    margin-bottom: 0.75rem;
   }
-  .section-heading em { font-style: italic; font-weight: 400; }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border-top: 0.5px solid var(--line);
-    border-left: 0.5px solid var(--line);
-  }
-  .service-card {
-    border-right: 0.5px solid var(--line);
-    border-bottom: 0.5px solid var(--line);
-    padding: 2.5rem;
-    transition: background 0.25s;
-    cursor: default;
-  }
-  .service-card:hover { background: var(--ink); color: var(--white); }
-  .service-card:hover .service-icon { color: #888; }
-  .service-card:hover .service-sub { color: #aaa; }
-  .service-icon {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+  .section-sub {
     color: var(--muted);
-    transition: color 0.25s;
-  }
-  .service-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 0.8rem;
-    letter-spacing: -0.02em;
-  }
-  .service-sub {
-    font-size: 0.88rem;
-    font-weight: 300;
-    line-height: 1.65;
-    color: var(--muted);
-    transition: color 0.25s;
-  }
-
-  /* PROCESS */
-  .process { background: var(--white); }
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
-    margin-top: 1rem;
-  }
-  .step-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    font-weight: 900;
-    color: var(--line);
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
-  .step-title {
     font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 0.6rem;
-    letter-spacing: -0.01em;
-  }
-  .step-text {
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.65;
-    font-weight: 300;
-  }
-
-  /* REVIEWS */
-  .reviews { background: var(--bg); }
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .review-card {
-    background: var(--white);
-    border: 0.5px solid var(--line);
-    border-radius: 4px;
-    padding: 2rem 2rem 1.8rem;
-  }
-  .stars {
-    color: #1a1a1a;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
-    margin-bottom: 1.2rem;
-  }
-  .review-text {
-    font-size: 0.92rem;
+    max-width: 550px;
     line-height: 1.7;
-    color: var(--ink);
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-  }
-  .review-author {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-  .review-avatar {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    background: var(--ink);
-    color: var(--white);
-    font-size: 0.75rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .review-name {
-    font-size: 0.85rem;
-    font-weight: 500;
-  }
-  .review-role {
-    font-size: 0.75rem;
-    color: var(--muted);
-    margin-top: 0.1rem;
+    margin-bottom: 3rem;
   }
 
-  /* GROWTH SECTION */
-  .growth-section {
-    background: var(--ink);
-    color: var(--white);
+  /* ABOUT */
+  .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 500px;
-    overflow: hidden;
+    gap: 3rem;
+    align-items: center;
   }
-  .growth-left {
-    padding: 6rem 4rem 6rem 3rem;
+  .about-avatar {
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 340px;
+    background: var(--dark3);
+    border-radius: 20px;
+    border: 1px solid var(--border);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-  }
-  .growth-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #777;
-    margin-bottom: 2rem;
-    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
-  }
-  .growth-label::before {
-    content: '';
-    width: 24px; height: 0.5px;
-    background: #555;
-  }
-  .growth-h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
-  }
-  .growth-h2 em { font-style: italic; font-weight: 400; }
-  .growth-body {
-    font-size: 0.95rem;
-    font-weight: 300;
-    color: #aaa;
-    line-height: 1.75;
-    max-width: 400px;
-    margin-bottom: 2.5rem;
-  }
-  .growth-right {
     position: relative;
     overflow: hidden;
-    border-left: 0.5px solid #333;
+  }
+  .about-avatar::before {
+    content: '';
+    position: absolute;
+    top: -40%; left: -40%;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(ellipse at center, rgba(59,130,246,0.1) 0%, transparent 60%);
+  }
+  .avatar-icon {
+    font-size: 5rem;
+    line-height: 1;
+  }
+  .avatar-tag {
+    background: rgba(59,130,246,0.15);
+    border: 1px solid rgba(59,130,246,0.3);
+    border-radius: 8px;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    color: #93c5fd;
+    font-weight: 600;
+    font-family: 'Syne', sans-serif;
+  }
+  .about-text p {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+  }
+  .about-text strong { color: #fff; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
+  .tag {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .price-card {
+    background: var(--dark2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .price-card:hover { border-color: rgba(59,130,246,0.5); transform: translateY(-3px); }
+  .price-card.featured {
+    border-color: var(--blue);
+    background: rgba(59,130,246,0.06);
+  }
+  .featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--blue);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .price-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .price-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  .price-desc { color: var(--muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.5rem; }
+  .price-amount {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: #fff;
+    letter-spacing: -1px;
+    margin-bottom: 0.25rem;
+  }
+  .price-amount span { font-size: 1rem; font-weight: 400; color: var(--muted); }
+  .price-note { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.5rem; }
+  .price-features { list-style: none; margin-bottom: 1.8rem; }
+  .price-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .price-features li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
+  .price-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem;
+    border-radius: 9px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .price-btn-outline {
+    border: 1px solid rgba(59,130,246,0.4);
+    color: var(--blue);
+    background: transparent;
+  }
+  .price-btn-outline:hover { background: rgba(59,130,246,0.1); }
+  .price-btn-fill {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+  }
+  .price-btn-fill:hover { background: var(--blue-dark); }
+
+  /* VOUCHES */
+  .vouches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+  .vouch-card {
+    background: var(--dark2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .vouch-card:hover { border-color: rgba(59,130,246,0.4); }
+  .vouch-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .vouch-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3rem;
-  }
-  .growth-metrics {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-  }
-  .metric-row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .metric-label {
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #666;
-    width: 120px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    font-family: 'Syne', sans-serif;
     flex-shrink: 0;
   }
-  .metric-bar-wrap {
-    flex: 1;
-    height: 2px;
-    background: #2a2a2a;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .metric-bar {
-    height: 100%;
-    background: var(--white);
-    border-radius: 2px;
-    animation: barGrow 1.5s ease forwards;
-    transform-origin: left;
-  }
-  @keyframes barGrow {
-    from { width: 0; }
-  }
-  .metric-val {
-    font-size: 0.85rem;
+  .vouch-name { font-weight: 600; font-size: 0.92rem; color: #fff; }
+  .vouch-role { font-size: 0.75rem; color: var(--muted); margin-top: 1px; }
+  .vouch-stars { color: #fbbf24; font-size: 0.8rem; margin-bottom: 0.75rem; }
+  .vouch-text { color: var(--muted); font-size: 0.87rem; line-height: 1.65; }
+  .vouch-tag {
+    display: inline-block;
+    margin-top: 0.75rem;
+    background: rgba(59,130,246,0.1);
+    border: 1px solid rgba(59,130,246,0.2);
+    color: #93c5fd;
+    font-size: 0.72rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 5px;
     font-weight: 500;
-    min-width: 42px;
-    text-align: right;
   }
 
-  /* CTA FOOTER */
-  .cta-section {
-    background: var(--white);
-    text-align: center;
-    padding: 8rem 3rem;
-    border-top: 0.5px solid var(--line);
-  }
-  .cta-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 900;
-    letter-spacing: -0.03em;
-    margin-bottom: 1.5rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.05;
-  }
-  .cta-section h2 em { font-style: italic; font-weight: 400; }
-  .cta-section p {
-    font-size: 1rem;
-    color: var(--muted);
-    font-weight: 300;
-    max-width: 420px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.7;
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--ink);
-    color: #777;
-    padding: 2.5rem 3rem;
+  /* DISCORD SECTION */
+  .discord-card {
+    background: linear-gradient(135deg, #1e1f2e 0%, #161825 100%);
+    border: 1px solid rgba(88,101,242,0.35);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 0.5px solid #2a2a2a;
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
+    gap: 2rem;
+    flex-wrap: wrap;
   }
-  footer .logo { color: var(--white); }
+  .discord-icon {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .discord-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  .discord-sub { color: var(--muted); font-size: 0.95rem; line-height: 1.6; max-width: 440px; }
+  .discord-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .discord-stat { display: flex; flex-direction: column; }
+  .discord-stat-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #fff;
+  }
+  .discord-stat-label { font-size: 0.75rem; color: var(--muted); }
+  .discord-btn {
+    background: #5865f2;
+    color: #fff;
+    padding: 0.9rem 2rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .discord-btn:hover { background: #4752c4; transform: translateY(-2px); }
+
+  /* HOW IT WORKS */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .step-card {
+    background: var(--dark2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.8rem;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .step-card:hover { border-color: rgba(59,130,246,0.4); }
+  .step-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: rgba(59,130,246,0.18);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .step-title { font-weight: 700; font-size: 0.95rem; color: #fff; margin-bottom: 0.5rem; }
+  .step-text { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 100%;
+  }
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  .footer-logo span { color: var(--blue); }
+  .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .footer-links a { color: var(--muted); font-size: 0.85rem; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #fff; }
+  .footer-copy { color: var(--muted); font-size: 0.78rem; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1.25rem; }
+    .nav-links { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-avatar { max-width: 200px; margin: 0 auto; }
+    .stat-item { padding: 1.2rem 1.5rem; min-width: 120px; }
+    .discord-card { text-align: center; justify-content: center; }
+    footer { flex-direction: column; align-items: center; text-align: center; }
+  }
 
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  .hero-content > * {
-    animation: fadeUp 0.8s ease both;
-  }
-  .hero-eyebrow { animation-delay: 0.1s; }
-  .hero h1 { animation-delay: 0.25s; }
-  .hero-sub { animation-delay: 0.4s; }
-  .hero-btns { animation-delay: 0.55s; }
+  .hero > * { animation: fadeUp 0.7s ease both; }
+  .hero .badge { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.2s; }
+  .hero p { animation-delay: 0.3s; }
+  .hero-btns { animation-delay: 0.4s; }
+  .scroll-hint { animation-delay: 0.5s; }
 
-  .hero-btns { display: flex; flex-wrap: wrap; align-items: center; }
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo">Groep <span>Cyprus</span></a>
-  <ul>
-    <li><a href="#diensten">Diensten</a></li>
-    <li><a href="#werkwijze">Werkwijze</a></li>
-    <li><a href="#reviews">Reviews</a></li>
+  <div class="nav-logo">y2<span>bq</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#vouches">Vouches</a></li>
+    <li><a href="#contact" class="nav-cta">Order Now →</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Gratis offerte</a>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <svg class="hero-svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <g opacity="0.22" fill="none" stroke="#1a1a1a" stroke-width="0.8">
-      <!-- Flowing path lines inspired by screenshot -->
-      <path d="M-100,700 Q300,400 600,600 T1200,300 T1800,200"/>
-      <path d="M-100,720 Q300,420 600,620 T1200,320 T1800,220"/>
-      <path d="M-100,740 Q300,440 600,640 T1200,340 T1800,240"/>
-      <path d="M-100,760 Q300,460 600,660 T1200,360 T1800,260"/>
-      <path d="M-100,780 Q300,480 600,680 T1200,380 T1800,280"/>
-      <path d="M-100,800 Q300,500 600,700 T1200,400 T1800,300"/>
-      <path d="M-100,820 Q300,520 600,720 T1200,420 T1800,320"/>
-      <path d="M-100,840 Q300,540 600,740 T1200,440 T1800,340"/>
-      <path d="M-100,860 Q300,560 600,760 T1200,460 T1800,360"/>
-      <path d="M-100,880 Q300,580 600,780 T1200,480 T1800,380"/>
-      <path d="M-100,900 Q300,600 600,800 T1200,500 T1800,400"/>
-      <path d="M-100,920 Q300,620 600,820 T1200,520 T1800,420"/>
-      <path d="M-100,940 Q300,640 600,840 T1200,540 T1800,440"/>
-      <path d="M-100,960 Q300,660 600,860 T1200,560 T1800,460"/>
-      <path d="M-100,980 Q300,680 600,880 T1200,580 T1800,480"/>
-      <path d="M-100,1000 Q300,700 600,900 T1200,600 T1800,500"/>
-      <path d="M-100,1020 Q300,720 600,920 T1200,620 T1800,520"/>
-      <path d="M-100,1040 Q300,740 600,940 T1200,640 T1800,540"/>
-      <path d="M-100,1060 Q300,760 600,960 T1200,660 T1800,560"/>
-      <path d="M-100,1080 Q300,780 600,980 T1200,680 T1800,580"/>
-      <path d="M-100,1100 Q300,800 600,1000 T1200,700 T1800,600"/>
-      <path d="M-100,1120 Q300,820 600,1020 T1200,720 T1800,620"/>
-      <path d="M-100,1140 Q300,840 600,1040 T1200,740 T1800,640"/>
-      <path d="M-100,1160 Q300,860 600,1060 T1200,760 T1800,660"/>
-      <path d="M-100,1180 Q300,880 600,1080 T1200,780 T1800,680"/>
-      <path d="M-100,1200 Q300,900 600,1100 T1200,800 T1800,700"/>
-    </g>
-  </svg>
-
-  <div class="hero-content">
-    <p class="hero-eyebrow">Webdesign bureau — Nederland</p>
-    <h1>Websites die<br><em>klanten</em><br>aantrekken.</h1>
-    <p class="hero-sub">Groep Cyprus bouwt professionele websites voor bedrijven en restaurants. Wij zorgen dat jouw zaak online gevonden wordt en meer klanten binnenhaalt.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-pill">Gratis offerte aanvragen &rarr;</a>
-      <a href="#reviews" class="btn-ghost">Bekijk resultaten</a>
-    </div>
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="badge">Top-Rated Content Creator &amp; Video Editor</div>
+  <h1>Professional Videos<br><span class="accent">Delivered Fast &amp; Cheap</span></h1>
+  <p>High-quality video editing for Discord servers, cheat showcases, Minecraft servers, websites &amp; more — all at prices that don't break the bank.</p>
+  <div class="hero-btns">
+    <a href="https://discord.com/users/y2bq" class="btn-primary">💬 DM me on Discord</a>
+    <a href="#pricing" class="btn-secondary">💰 See Pricing</a>
   </div>
-  <div class="hero-scroll">Scroll naar beneden</div>
-</section>
-
-<!-- STATS -->
-<div class="stats">
-  <div class="stat-item">
-    <div class="stat-num">48+</div>
-    <div class="stat-label">Tevreden klanten</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">3×</div>
-    <div class="stat-label">Meer online bezoekers gemiddeld</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">14</div>
-    <div class="stat-label">Dagen tot live website</div>
+  <div class="scroll-hint">
+    <span class="scroll-arrow">↓</span>
+    scroll to explore
   </div>
 </div>
 
-<!-- SERVICES -->
-<section class="section" id="diensten">
-  <div class="section-label">Wat wij doen</div>
-  <h2 class="section-heading">Alles wat jouw bedrijf <em>online nodig heeft</em></h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">✦</div>
-      <div class="service-title">Website op maat</div>
-      <p class="service-sub">Een strakke, snelle website die perfect past bij jouw merk en doelgroep. Geen templates, alles uniek ontworpen.</p>
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">200<span>+</span></div>
+    <div class="stat-label">Videos Edited</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">50<span>+</span></div>
+    <div class="stat-label">Happy Clients</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">5K<span>+</span></div>
+    <div class="stat-label">Discord Members</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">4.9<span>/5</span></div>
+    <div class="stat-label">Average Rating</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">24<span>hr</span></div>
+    <div class="stat-label">Avg. Delivery</div>
+  </div>
+</div>
+
+<!-- VOUCHES -->
+<section id="vouches" style="padding-top:3.5rem;padding-bottom:2rem;">
+  <div class="section-label">Testimonials</div>
+  <h2 class="section-title">What clients say.</h2>
+  <p class="section-sub">Real feedback from real people I've worked with. Not paid reviews — just genuine vouches from my community.</p>
+  <div class="vouches-grid">
+    <div class="vouch-card">
+      <div class="vouch-header">
+        <div class="vouch-avatar" style="background:rgba(59,130,246,0.18);color:#93c5fd;">XH</div>
+        <div><div class="vouch-name">xHexbyte</div><div class="vouch-role">Cheat Owner · Discord: xHexbyte#0021</div></div>
+      </div>
+      <div class="vouch-stars">★★★★★</div>
+      <div class="vouch-text">y2bq edited a full showcase for our aimbot cheat and honestly it blew my mind. The transitions were clean, the music matched perfectly. Our Discord grew by 300 members after we posted it. 100% recommend.</div>
+      <span class="vouch-tag">Cheat Showcase</span>
     </div>
-    <div class="service-card">
-      <div class="service-icon">◎</div>
-      <div class="service-title">Restaurant pagina's</div>
-      <p class="service-sub">Online menu, reserveringssysteem en foto-galerie. Laat gasten al verlekkerd raken voor ze de deur binnenstappen.</p>
+    <div class="vouch-card">
+      <div class="vouch-header">
+        <div class="vouch-avatar" style="background:rgba(16,185,129,0.18);color:#6ee7b7;">NL</div>
+        <div><div class="vouch-name">N3onLunar</div><div class="vouch-role">Minecraft Server Owner · 1.2k members</div></div>
+      </div>
+      <div class="vouch-stars">★★★★★</div>
+      <div class="vouch-text">Needed a trailer for our new Minecraft SMP server. y2bq delivered it in under 24 hours and the quality was insane for the price. We paid €25 and got something that looks like it cost €200. Vouch!</div>
+      <span class="vouch-tag">Minecraft Server Trailer</span>
     </div>
-    <div class="service-card">
-      <div class="service-icon">▲</div>
-      <div class="service-title">Google vindbaarheid</div>
-      <p class="service-sub">Lokale SEO zodat jouw zaak bovenaan staat als mensen in jouw stad zoeken naar wat jij aanbiedt.</p>
+    <div class="vouch-card">
+      <div class="vouch-header">
+        <div class="vouch-avatar" style="background:rgba(245,158,11,0.18);color:#fcd34d;">SK</div>
+        <div><div class="vouch-name">SkullKid_YT</div><div class="vouch-role">Content Creator · 4.8k YouTube subs</div></div>
+      </div>
+      <div class="vouch-stars">★★★★★</div>
+      <div class="vouch-text">Got a quick 30-second promo clip for free in exchange for a role in my Discord. The quality was honestly better than editors I've paid €50+ before. Will be coming back for more projects.</div>
+      <span class="vouch-tag">Promo Clip</span>
     </div>
-    <div class="service-card">
-      <div class="service-icon">◈</div>
-      <div class="service-title">Webshop</div>
-      <p class="service-sub">Verkoop producten of diensten online, 24/7. Wij koppelen betaalmethoden en zorgen voor een vlekkeloze checkout.</p>
+    <div class="vouch-card">
+      <div class="vouch-header">
+        <div class="vouch-avatar" style="background:rgba(239,68,68,0.18);color:#fca5a5;">RM</div>
+        <div><div class="vouch-name">RavenMods</div><div class="vouch-role">Cheat Reseller · Discord Owner</div></div>
+      </div>
+      <div class="vouch-stars">★★★★★</div>
+      <div class="vouch-text">Paid €10 for a short ad for our reseller server. Fast delivery, great communication and the video was exactly what I asked for. Our server went from 100 to 800 members in a week after we dropped it.</div>
+      <span class="vouch-tag">Discord Ad</span>
     </div>
-    <div class="service-card">
-      <div class="service-icon">⟡</div>
-      <div class="service-title">Onderhoud & hosting</div>
-      <p class="service-sub">Wij houden jouw website up-to-date, veilig en snel. Jij hoeft er niet naar om te kijken.</p>
+    <div class="vouch-card">
+      <div class="vouch-header">
+        <div class="vouch-avatar" style="background:rgba(139,92,246,0.18);color:#c4b5fd;">VX</div>
+        <div><div class="vouch-name">VortexFPS</div><div class="vouch-role">Gaming Community · 2.1k Discord</div></div>
+      </div>
+      <div class="vouch-stars">★★★★★</div>
+      <div class="vouch-text">y2bq handled our entire monthly content package. 5 videos, thumbnails, everything. Saved us so much time and our engagement doubled. The Premium Pack is genuinely worth every euro.</div>
+      <span class="vouch-tag">Premium Pack</span>
     </div>
-    <div class="service-card">
-      <div class="service-icon">◻</div>
-      <div class="service-title">Branding & logo</div>
-      <p class="service-sub">Van logo tot huisstijl — wij bouwen een herkenbaar visueel identiteit dat vertrouwen uitstraalt.</p>
+    <div class="vouch-card">
+      <div class="vouch-header">
+        <div class="vouch-avatar" style="background:rgba(20,184,166,0.18);color:#5eead4;">ZP</div>
+        <div><div class="vouch-name">ZephyrPvP</div><div class="vouch-role">PvP Network · 700 players</div></div>
+      </div>
+      <div class="vouch-stars">★★★★★</div>
+      <div class="vouch-text">Needed a hype trailer for our new season and y2bq smashed it. Gave him creative freedom and he delivered something our whole community was hyped about. Crazy fast turnaround too.</div>
+      <span class="vouch-tag">Server Trailer</span>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="section process" id="werkwijze">
-  <div class="section-label">Hoe het werkt</div>
-  <h2 class="section-heading">Van eerste gesprek tot <em>live website</em></h2>
-  <div class="process-steps">
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
     <div>
+      <div class="about-avatar">
+        <div class="avatar-icon">🎬</div>
+        <div class="avatar-tag">y2bq</div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">I'm y2bq — your go-to creator for everything video.</h2>
+      <p>I specialize in creating and editing <strong>high-quality, engaging videos</strong> for all kinds of communities and businesses online. Whether you run a Discord server, manage a cheat website, host a Minecraft network, or need a promo video — I've got you covered.</p>
+      <p>My goal is simple: <strong>deliver professional results at prices anyone can afford</strong>. No inflated agency rates — just clean, sharp edits that make your project stand out.</p>
+      <p>With <strong>200+ completed projects</strong> and clients across Europe and beyond, I know exactly what it takes to grow a community through great content.</p>
+      <div class="tag-row">
+        <span class="tag">🎮 Cheat Showcases</span>
+        <span class="tag">⚔️ Minecraft Servers</span>
+        <span class="tag">💬 Discord Servers</span>
+        <span class="tag">🌐 Website Promos</span>
+        <span class="tag">✂️ Short-form Clips</span>
+        <span class="tag">📢 Ads &amp; Trailers</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="section-label">Process</div>
+  <h2 class="section-title">How it works</h2>
+  <p class="section-sub">Getting a video from me is simple and fast. No complicated forms, no waiting weeks.</p>
+  <div class="steps-grid">
+    <div class="step-card">
       <div class="step-num">01</div>
-      <div class="step-title">Kennismaken</div>
-      <p class="step-text">We bespreken jouw wensen, doelgroep en wat jou onderscheidt van de concurrentie.</p>
+      <div class="step-title">Join the Discord</div>
+      <div class="step-text">Hop into my Discord server and open a ticket or DM me directly to discuss what you need.</div>
     </div>
-    <div>
+    <div class="step-card">
       <div class="step-num">02</div>
-      <div class="step-title">Ontwerp</div>
-      <p class="step-text">Wij maken een uniek ontwerp op basis van jouw merk. Jij geeft feedback, wij verfijnen.</p>
+      <div class="step-title">Tell Me Your Idea</div>
+      <div class="step-text">Give me a brief — what's the video for, what style you want, and any footage or clips you have.</div>
     </div>
-    <div>
+    <div class="step-card">
       <div class="step-num">03</div>
-      <div class="step-title">Bouwen</div>
-      <p class="step-text">De website wordt gebouwd: snel, mobielvriendelijk en klaar voor Google.</p>
+      <div class="step-title">Agree &amp; Pay</div>
+      <div class="step-text">We agree on the price and you pay upfront or 50% deposit. Simple, transparent, no surprises.</div>
     </div>
-    <div>
+    <div class="step-card">
       <div class="step-num">04</div>
-      <div class="step-title">Live &amp; groei</div>
-      <p class="step-text">Na jouw goedkeuring gaat de website live. Wij monitoren de resultaten en blijven ondersteunen.</p>
+      <div class="step-title">Receive &amp; Review</div>
+      <div class="step-text">I deliver the video within the agreed timeframe. One round of revisions included — your satisfaction first.</div>
     </div>
   </div>
 </section>
 
-<!-- GROWTH -->
-<div class="growth-section">
-  <div class="growth-left">
-    <div class="growth-label">Resultaten</div>
-    <h2 class="growth-h2">Meer klanten,<br><em>meetbaar resultaat</em></h2>
-    <p class="growth-body">Na de lancering van een Cyprus-website zien onze klanten gemiddeld een flinke stijging in online bezoeken, reserveringen en directe aanvragen. Geen beloftes — gewoon cijfers.</p>
-    <a href="#contact" class="btn-pill" style="background:#fff; color:#1a1a1a; align-self:flex-start;">Start jouw groei &rarr;</a>
-  </div>
-  <div class="growth-right">
-    <div class="growth-metrics">
-      <div class="metric-row">
-        <div class="metric-label">Websitebezoek</div>
-        <div class="metric-bar-wrap"><div class="metric-bar" style="width: 87%;"></div></div>
-        <div class="metric-val">+87%</div>
-      </div>
-      <div class="metric-row">
-        <div class="metric-label">Online reserv.</div>
-        <div class="metric-bar-wrap"><div class="metric-bar" style="width: 73%;"></div></div>
-        <div class="metric-val">+73%</div>
-      </div>
-      <div class="metric-row">
-        <div class="metric-label">Aanvragen</div>
-        <div class="metric-bar-wrap"><div class="metric-bar" style="width: 91%;"></div></div>
-        <div class="metric-val">+91%</div>
-      </div>
-      <div class="metric-row">
-        <div class="metric-label">Google ranking</div>
-        <div class="metric-bar-wrap"><div class="metric-bar" style="width: 65%;"></div></div>
-        <div class="metric-val">Top 3</div>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="divider"></div>
 
-<!-- REVIEWS -->
-<section class="section reviews" id="reviews">
-  <div class="section-label">Wat klanten zeggen</div>
-  <h2 class="section-heading">Reviews van <em>tevreden ondernemers</em></h2>
-  <div class="reviews-grid">
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-label">Pricing</div>
+  <h2 class="section-title">Affordable packages,<br>premium quality.</h2>
+  <p class="section-sub">Choose a plan that fits your budget. All prices are final — no hidden fees. Payment via PayPal or crypto.</p>
+  <div class="pricing-grid">
 
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">"Sinds de nieuwe website heeft ons restaurant elke weekend volgeboekte avonden. De online reserveringen zijn meer dan verdubbeld. Echt geweldig werk van het Cyprus-team."</p>
-      <div class="review-author">
-        <div class="review-avatar">MV</div>
-        <div>
-          <div class="review-name">Marco Visser</div>
-          <div class="review-role">Eigenaar, Ristorante Bella — Rotterdam</div>
-        </div>
-      </div>
+    <div class="price-card">
+      <div class="price-icon">⚡</div>
+      <div class="price-name">Quick Clip</div>
+      <div class="price-desc">Perfect for short promos, Discord server ads, or cheat teasers under 60 seconds.</div>
+      <div class="price-amount">€10 <span>/ video</span></div>
+      <div class="price-note">or free Discord role in your server</div>
+      <ul class="price-features">
+        <li>Up to 60-second video</li>
+        <li>Basic transitions &amp; effects</li>
+        <li>Background music included</li>
+        <li>1 revision round</li>
+        <li>Delivery within 24 hours</li>
+      </ul>
+      <a href="#contact" class="price-btn price-btn-outline">Order Now →</a>
     </div>
 
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">"Wij werden op Google nauwelijks gevonden. Na twee maanden met Groep Cyprus staan we bovenaan voor al onze zoektermen. Het aantal telefoontjes is verdrievoudigd."</p>
-      <div class="review-author">
-        <div class="review-avatar">LB</div>
-        <div>
-          <div class="review-name">Laura Bos</div>
-          <div class="review-role">Directeur, Klus &amp; Bouw Bos — Utrecht</div>
-        </div>
-      </div>
+    <div class="price-card featured">
+      <div class="featured-badge">Most Popular</div>
+      <div class="price-icon">🎬</div>
+      <div class="price-name">Full Showcase</div>
+      <div class="price-desc">Ideal for full cheat showcases, Minecraft server trailers, or website promo videos.</div>
+      <div class="price-amount">€25 <span>/ video</span></div>
+      <div class="price-note">or 1-day free access to your cheat / free staff role</div>
+      <ul class="price-features">
+        <li>Up to 5-minute video</li>
+        <li>Advanced editing &amp; color grade</li>
+        <li>Custom intro / outro</li>
+        <li>Motion graphics &amp; overlays</li>
+        <li>2 revision rounds</li>
+        <li>Delivery within 48 hours</li>
+      </ul>
+      <a href="#contact" class="price-btn price-btn-fill">Order Now →</a>
     </div>
 
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">"Ik dacht dat een mooie website duur en ingewikkeld zou zijn. Cyprus heeft het hele traject superduidelijk uitgelegd en in 10 dagen hadden we een prachtige site online."</p>
-      <div class="review-author">
-        <div class="review-avatar">SK</div>
-        <div>
-          <div class="review-name">Sara Khalil</div>
-          <div class="review-role">Eigenaar, Beauty Studio Bloom — Amsterdam</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">"Onze webshop liep niet lekker en conversies waren laag. Cyprus heeft alles opnieuw opgezet en de omzet uit de webshop is in het eerste kwartaal al met 60% gestegen."</p>
-      <div class="review-author">
-        <div class="review-avatar">DH</div>
-        <div>
-          <div class="review-name">Daan Hendriks</div>
-          <div class="review-role">Ondernemer, FietsSupply.nl — Den Haag</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">"Als restaurant zonder grote marketingbudget dacht ik dat online groeien niet haalbaar was. Cyprus heeft dat tegendeel bewezen. Meer gasten, betere reviews en een vollere zaak."</p>
-      <div class="review-author">
-        <div class="review-avatar">AN</div>
-        <div>
-          <div class="review-name">Ama Nkosi</div>
-          <div class="review-role">Chef-eigenaar, Savana Kitchen — Eindhoven</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">"Snelle communicatie, mooi ontwerp en écht resultaat. We kregen de eerste week al nieuwe aanvragen via de contactpagina. Aanrader voor elke ondernemer die serieus wil groeien."</p>
-      <div class="review-author">
-        <div class="review-avatar">RJ</div>
-        <div>
-          <div class="review-name">Roos Jansen</div>
-          <div class="review-role">Founder, Studio Mindflow — Haarlem</div>
-        </div>
-      </div>
+    <div class="price-card">
+      <div class="price-icon">👑</div>
+      <div class="price-name">Premium Pack</div>
+      <div class="price-desc">Full creative package — multiple videos, branding, thumbnails, and ongoing support.</div>
+      <div class="price-amount">€50 <span>/ month</span></div>
+      <div class="price-note">or free VIP/owner role + custom perks</div>
+      <ul class="price-features">
+        <li>Up to 5 videos per month</li>
+        <li>Thumbnails &amp; banners included</li>
+        <li>Priority queue — fastest delivery</li>
+        <li>Unlimited revisions</li>
+        <li>Direct WhatsApp / Discord line</li>
+        <li>Monthly performance recap</li>
+      </ul>
+      <a href="#contact" class="price-btn price-btn-outline">Order Now →</a>
     </div>
 
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="contact">
-  <h2>Klaar om <em>meer klanten</em> te bereiken?</h2>
-  <p>Vraag gratis een offerte aan. Geen verplichtingen, wél een eerlijk advies op maat voor jouw zaak.</p>
-  <a href="mailto:hallo@groepcyprus.nl" class="btn-pill">Neem contact op &rarr;</a>
+<div class="divider"></div>
+
+<!-- CONTACT / DM -->
+<section id="contact">
+  <div class="discord-card" style="justify-content:center;text-align:center;flex-direction:column;align-items:center;gap:1.5rem;">
+    <div style="font-size:3.2rem;">💬</div>
+    <div>
+      <div class="discord-title">Ready to order?</div>
+      <div class="discord-sub" style="margin:0.6rem auto;max-width:480px;">DM me directly on Discord and I'll get back to you fast. Just send me what you need and we'll sort the rest.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+      <a href="https://discord.com/users/y2bq" class="discord-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.033.053a19.994 19.994 0 0 0 6.014 3.03.077.077 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.201 13.201 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+        DM me on Discord
+      </a>
+      <span style="color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:0.04em;">@y2bq</span>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <a href="#" class="logo">Groep <span>Cyprus</span></a>
-  <span>hallo@groepcyprus.nl</span>
-  <span>&copy; 2026 Groep Cyprus. Alle rechten voorbehouden.</span>
+  <div class="footer-logo">y2<span>bq</span></div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#vouches">Vouches</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 y2bq. All rights reserved.</div>
 </footer>
 
 </body>
